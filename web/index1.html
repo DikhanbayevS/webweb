@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+          <a class="navbar-brand" href="#"> <img src="logol.png" alt="" height="50" width="50" style="border-radius: 23px;"> </a>
+
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#">Home
+                          <span class="sr-only">(current)</span>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#services">Books</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#contact">Audiobooks</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#contact">Presentations</a>
+
+                  </li>
+                   <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="login.html">Login</a>
+    <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="registration.html">Registration</a>
+              </ul>
+          </div>
+      </div>
+    </nav>
+      <header class="jumbotron jumbotron-fluid quoteWindow" style="background-image:url(backbook.jpeg); background:cover;">
+    <div class="container-fluid text-center">
+       <h1 class="display-5 text-white" id="quote">Room without book, like body without soul</h1>
+       <h1 class="text-white"><small>We help you find any book</small></h2>
+
+    </div>
+</header>
+<div class="d-flex flex-wrap justify-content-around cards">
+    <div class="card mb-4" style="width: 18rem;">
+        <img class="card-img-top" src="cardbooks3.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">BOOKS</h5>
+          <p class="card-text" id = "bookInfo">are important because it develops our thoughts, give us endless knowledge and lessons while keeping our minds active.</p>
+          <button class="btn btn-primary cart" onclick="bookFunc()">Learn More</button>
+        </div>
+    </div>
+    <div class="card mb-4" style="width: 18rem;">
+        <img class="card-img-top" src="cardaudio.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">AUDIOBOOKS</h5>
+          <p class="card-text" id="audioInfo">are immersive, educational, instructional, entertaining and they’re perfect for the time rich and the time poor. </p>
+          <button class="btn btn-primary cart" onclick="audioFunc()">Learn More</button>
+        </div>
+    </div>
+    <div class="card mb-4" style="width: 18rem;">
+        <img class="card-img-top" src="cardpresent.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">PRESENTATIONS</h5>
+            <p class="card-text" id="presInfo">are can be very useful, comfortable and contains only important information,so you will achieve any of your study goals.</p>
+            <button class="btn btn-primary cart" onclick="presFunc()">Learn More</button>
+        </div>
+    </div>
+  </div>
+ 
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>Tabbed Image Gallery</h2>
+  <p>Click on the images below:</p>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="https://i2.mybook.io/p/x378/book_covers/aa/5f/aa5fdb05-7eaf-471a-9ada-1e7e7da06ccd.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://i2.mybook.io/p/x378/book_covers/bf/b5/bfb54cb2-d6be-42e5-87e1-429801c3bf90.jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://i1.mybook.io/p/x378/book_covers/27/64/2764b5c0-80e6-44dc-b52e-79688853d107.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://i3.mybook.io/p/x378/book_covers/46/1d/461d73de-582b-4b84-b7e7-51eec7cb94d6.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">×</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+  <div id="footer" class="bg-dark">
+            <div class="footer-body">
+                <div class="company">
+                    <div class="unversity">
+                        Astana IT University
+                    </div>
+                    <div class="group">
+                        CS - 2103
+                    </div>
+                </div>
+                <div class="creators">
+                    <h4 class="lng-creators">Creators</h4>
+                    <div>Sanzhar Dikhanbayev</div>
+                    <div>Manas Maulen</div>
+                </div>
+                <div class="actions">
+                    <div class="contact">
+                        <button class="lng-bcontact">Contact us</button>
+                        <hr>
+                    </div>
+                    <div class="join">
+                        <button class="lng-bjoin">Join us</button>
+                        <hr>
+                    </div>
+                </div>
+                <div class="accounts">
+                    <a href=""><img src="instagram (1).png" alt=""></a>
+                    <a href=""><img src="facebook.png" alt=""></a>
+                    <a href=""><img src="twitter.png" alt=""></a>
+                </div>
+
+            </div>
+            <div class="copyright">
+             CS - 2103  Legacy Policy
+            </div>
+        </div>
+
+  <script src="java.js">
+  </script>
+  <script>
+    var quote = document.getElementById("quote");
+    var quotes = ["A room without books is like a body without a soul.", "Take a good book to bed with you—books do not snore.", "Where is human nature so weak as in the bookstore" , "Sleep is good, he said, and books are better." , "The library is inhabited by spirits that come out of the pages at night."];
+
+    var times = 9999;
+    var el =0;
+    var milsec = 2000;
+    while(times){
+      times--;
+      setTimeout(()=>{
+        quote.innerHTML = quotes[el];
+        el++;
+        if(el == quotes.length){
+          el = 0;
+        }
+      }, milsec);
+      milsec+=2000;
+    }
+  </script>
+  <script>
+  var quote = document.getElementById("quote");
+
+  var times = 9999;
+  var milsec = 1700;
+  while(times){
+    times--;
+    setTimeout(()=>{
+      quote.style.opacity = "0.75";
+    }, milsec);
+    milsec+=50;
+    setTimeout(()=>{
+      quote.style.opacity = "0.50";
+    }, milsec);
+    milsec+=50;
+    setTimeout(()=>{
+      quote.style.opacity = "0.25";
+    }, milsec);
+    milsec+=50;
+    setTimeout(()=>{
+      quote.style.opacity = "0";
+    }, milsec);
+    milsec+=50;
+    setTimeout(()=>{
+      quote.style.opacity = "1";
+    }, milsec);
+    milsec+=1800;
+
+  }
+  </script>
+</body>
